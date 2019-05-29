@@ -2,6 +2,8 @@ import Component from './Component.js';
 import Header from './Header.js';
 import AirbenderList from './AirbenderList.js';
 import api from '../services/airbender-api.js';
+import Loading from './Loading.js';
+import ErrorDisplay from './ErrorDisplay.js';
 
 class App extends Component {
 
@@ -20,13 +22,22 @@ class App extends Component {
         const airbenderList = new AirbenderList({ characters: [] });
         main.appendChild(airbenderList.render());
 
+        const loading = new Loading ({ loading: true });
+        main.appendChild(loading.render());
+
+        const errorDisplay = new ErrorDisplay({ error: '' });
+        main.appendChild(errorDisplay.render());
+
         api.getCharacters()
             .then(characters => {
                 airbenderList.update({ characters });
+            })
+            .catch(err => {
+                console.log(err);
+            })
+            .finally(() => {
+                loading.update({ loading: false });
             });
-            // .catch(err => {
-            //     console.log(err);
-            // });
 
         return dom;
     }
