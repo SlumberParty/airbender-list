@@ -30,7 +30,6 @@ class App extends Component {
 
         function loadCharacters() {
             const params = window.location.hash.slice(1);
-            console.log(window.location.hash);
             
             const searchParams = new URLSearchParams(params);
             const search = searchParams.toString();
