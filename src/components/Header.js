@@ -5,7 +5,7 @@ class Header extends Component {
     renderTemplate() {
         return /*html*/`
             <header>
-                <h1>Airbender Gallery</h1>
+                <h1>Claire's Avatar the last Airbender Gallery</h1>
             </header>
         `;
     }
