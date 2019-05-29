@@ -16,4 +16,4 @@ class ErrorDisplay extends Component {
     }
 }
 
-export default ErrorDisplay
+export default ErrorDisplay;
