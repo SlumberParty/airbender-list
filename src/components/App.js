@@ -1,6 +1,7 @@
 import Component from './Component.js';
 import Header from './Header.js';
 import AirbenderList from './AirbenderList.js';
+import api from '../services/airbender-api.js';
 
 class App extends Component {
 
@@ -16,8 +17,16 @@ class App extends Component {
         dom.insertBefore(headerDOM, main);
 
         //get list DOM
-        const airbenderList = new AirbenderList();
+        const airbenderList = new AirbenderList({ characters: [] });
         main.appendChild(airbenderList.render());
+
+        api.getCharacters()
+            .then(characters => {
+                airbenderList.update({ characters });
+            });
+            // .catch(err => {
+            //     console.log(err);
+            // });
 
         return dom;
     }
@@ -26,23 +35,6 @@ class App extends Component {
         return /*html*/`
             <div>
                 <main>
-                    <ul class="airbender-list">
-                        <li class="airbender-item">
-                            <h2>Butler</h2>
-                            <img src="https://vignette.wikia.nocookie.net/avatar/images/8/82/Butler.png/revision/latest?cb=20121107115044" alt="Butler">
-                            <blockquote>Profession: Butler<br>Allies: Asami Sato</blockquote>
-                        </li>
-                        <li class="airbender-item">
-                            <h2>Innkeeper</h2>
-                            <img src="https://vignette.wikia.nocookie.net/avatar/images/3/32/Innkeeper.png/revision/latest?cb=20140802073911" alt="Innkeeper">
-                            <blockquote>Profession: Inkeeper<br>Allies:[] </blockquote>
-                        </li>
-                        <li class="airbender-item">
-                            <h2>Hahn</h2>
-                            <img src="https://vignette.wikia.nocookie.net/avatar/images/4/46/Hahn.png/revision/latest?cb=20140122221732" alt="Hahn">
-                            <blockquote>Profession: Soldier<br>Allies: Northern Water Tribe</blockquote>
-                        </li>
-                    </ul>
                 </main>
             </div>
         `;
