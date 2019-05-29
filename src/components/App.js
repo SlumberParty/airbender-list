@@ -1,12 +1,32 @@
 import Component from './Component.js';
+import Header from './Header.js';
+import AirbenderList from './AirbenderList.js';
 
 class App extends Component {
+
+    render() {
+        const dom = this.renderDOM();
+
+        //get header DOM
+        const header = new Header();
+        const headerDOM = header.render();
+
+        //get main DOM
+        const main = dom.querySelector('main');
+        dom.insertBefore(headerDOM, main);
+
+        //get list DOM
+        const airbenderList = new AirbenderList();
+        main.appendChild(airbenderList.render());
+
+        return dom;
+    }
 
     renderTemplate() {
         return /*html*/`
             <div>
                 <main>
-                    <ul>
+                    <ul class="airbender-list">
                         <li>
                             <h1>Butler</h1>
                             <img src="https://vignette.wikia.nocookie.net/avatar/images/8/82/Butler.png/revision/latest?cb=20121107115044" alt="Butler">
@@ -27,6 +47,6 @@ class App extends Component {
             </div>
         `;
     }
-};
+}
 
 export default App;
