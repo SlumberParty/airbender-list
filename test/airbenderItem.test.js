@@ -23,8 +23,8 @@ test('checks that html is same as import data', (assert) => {
 
     // Assert
     assert.htmlEqual(rendered, /*html*/`
-        <li>
-            <h1>Butler</h1>
+        <li class="airbender-item">
+            <h2>Butler</h2>
             <img src="https://vignette.wikia.nocookie.net/avatar/images/8/82/Butler.png/revision/latest?cb=20121107115044" alt="Butler">
             <blockquote>Profession: Butler<br>Allies: Asami Sato</blockquote>
         </li>

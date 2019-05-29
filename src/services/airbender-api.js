@@ -1,4 +1,4 @@
-const URL = 'https://last-airbender-api.herokuapp.com/api/v1/characters/random?count=10';
+const URL = 'https://last-airbender-api.herokuapp.com/api/v1/characters/random?count=20';
 
 const api = {
     getCharacters() {
