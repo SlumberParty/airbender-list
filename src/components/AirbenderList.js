@@ -10,7 +10,6 @@ class AirbenderList extends Component {
             const airbenderItem = new AirbenderItem({ character });
             list.appendChild(airbenderItem.render());
         });
-
         return list;
     }
 
