@@ -65,10 +65,6 @@ class App extends Component {
             <div>
                 <main>
                     <a class="show-all" href="./">Show All Characters</a>
-                    <button>Fire Type</button>
-                    <button>Water Type</button>
-                    <button>Earth Type</button>
-                    <button>Air Type</button>
                 </main>
             </div>
         `;
