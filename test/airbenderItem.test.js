@@ -7,12 +7,16 @@ QUnit.module('Airbender Item');
 test('checks that html is same as import data', (assert) => {
     // Arrange
     const character = {
+        '_id': '5cdf0769b6e02a467e3e766b',
         'allies': [
-            'Asami Sato'
+            'Royal Earthbender Guards'
         ],
-        'photoUrl': 'https://vignette.wikia.nocookie.net/avatar/images/8/82/Butler.png/revision/latest?cb=20121107115044',
-        'name': 'Butler',
-        'profession': 'Butler',
+        'enemies': [
+            'Chin'
+        ],
+        'photoUrl': 'https://vignette.wikia.nocookie.net/avatar/images/5/51/46th_Earth_King.png/revision/latest?cb=20130627160441',
+        'name': '46th Earth King',
+
     };
   
     const airbenderItem = new AirbenderItem({ character });
@@ -24,9 +28,12 @@ test('checks that html is same as import data', (assert) => {
     // Assert
     assert.htmlEqual(rendered, /*html*/`
         <li class="airbender-item">
-            <h2>Butler</h2>
-            <img src="https://vignette.wikia.nocookie.net/avatar/images/8/82/Butler.png/revision/latest?cb=20121107115044" alt="Butler">
-            <blockquote>Profession: Butler<br>Allies: Asami Sato</blockquote>
+            <h2>46th Earth King</h2>
+            <img src="https://vignette.wikia.nocookie.net/avatar/images/5/51/46th_Earth_King.png/revision/latest?cb=20130627160441" alt="46th Earth King">
+            <blockquote>
+            <a href="#allies=46th+Earth+King">Allies</a>
+            <a href="#enemies=46th+Earth+King">Enemies</a>
+            </blockquote>
         </li>
     `);
 });
