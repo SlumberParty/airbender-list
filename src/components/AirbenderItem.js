@@ -4,7 +4,7 @@ class AirbenderItem extends Component {
 
     renderTemplate() {
         const character = this.props.character;
-        const src = character.photoUrl || './assets/not-found.js';
+        const src = character.photoUrl || './assets/not-found.jpg';
         
         function encodeSearchParam(param, name) {
             const sp = new URLSearchParams();
