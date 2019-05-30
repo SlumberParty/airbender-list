@@ -1,0 +1,24 @@
+.airbender-item {
+    list-style: none;
+    height: 325px;
+    width: 300px;
+    border: 2px solid rgb(102, 137, 250);
+    background: rgb(161, 131, 92);
+    text-align: center;
+    margin: 0 12px 12px 0;
+}
+
+.airbender-item img {
+    height: 150px;
+}
+
+blockquote {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4em;
+}
+
+h2 {
+    font-size: 1.8em;
+    text-shadow: 1px 1px white;
+}
